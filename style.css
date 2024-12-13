@@ -1,0 +1,194 @@
+<!DOCTYPE html >
+<html lang="en" >
+<head >
+<meta charset="UTF-8" >
+<meta name="viewport" content="width=device-width, initial-scale=1.0" >
+<title > Mawater 974 - Future of Mobility</title >
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.16/tailwind.min.css" >
+<link rel="stylesheet" href="styles.css" >
+</head >
+<body class="bg-gray-900 text-white" >
+<header class="bg-gray-800 py-4 shadow-lg" >
+<nav class="container mx-auto flex justify-between items-center" >
+<a href="#" class="text-2xl font-bold" > Mawater 974</a >
+<ul class="flex space-x-6" >
+<li > <a href="#" class="hover:text-gray-400" > Home</a > </li >
+<li > <a href="#" class="hover:text-gray-400" > Car Ads</a > </li >
+<li > <a href="#" class="hover:text-gray-400" > Car Rental</a > </li >
+<li > <a href="#" class="hover:text-gray-400" > Spare Parts</a > </li >
+<li > <a href="#" class="hover:text-gray-400" > Car Photography</a > </li >
+<li > <a href="#" class="hover:text-gray-400" > Agency</a > </li >
+</ul >
+</nav >
+</header >
+
+<main >
+<section class="hero py-24 bg-gradient-to-r from-blue-900 to-purple-900" >
+<div class="container mx-auto flex flex-col items-center justify-center" >
+<h1 class="text-4xl md:text-6xl font-bold mb-4" > Welcome to Mawater 974</h1 >
+<p class="text-lg md:text-xl mb-8" > Discover the future of mobility, where innovation meets convenience.</p >
+<a href="#" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full transition-colors duration-300" > Explore Now</a >
+</div >
+</section >
+
+<section class="buy-sell-cars py-16 bg-gray-800" >
+<div class="container mx-auto text-center" >
+<h2 class="text-3xl font-bold mb-8" > Buy or Sell a Car</h2 >
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8" >
+<div class="bg-gray-700 rounded-lg p-8 shadow-lg" >
+<h3 class="text-xl font-bold mb-4" > Buy a Car</h3 >
+<p class="text-gray-400 mb-4" > Browse through our extensive selection of cars for sale. Find your dream car and make it yours today.</p >
+<a href="#" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition-colors duration-300" > Browse Cars</a >
+</div >
+<div class="bg-gray-700 rounded-lg p-8 shadow-lg" >
+<h3 class="text-xl font-bold mb-4" > Sell a Car</h3 >
+<p class="text-gray-400 mb-4" > Looking to sell your car? List it on Mawater 974 and connect with potential buyers in no time.</p >
+<a href="#" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition-colors duration-300" > List Your Car</a >
+</div >
+</div >
+</div >
+</section >
+
+<section class="featured-cars py-16" >
+<div class="container mx-auto" >
+<h2 class="text-3xl font-bold mb-8" > Featured Cars</h2 >
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8" >
+<div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg" >
+<img src="https://via.placeholder.com/300x200" alt="Car 1" class="w-full h-48 object-cover" >
+<div class="p-4" >
+<h3 class="text-xl font-bold mb-2" > 2022 Tesla Model Y</h3 >
+<p class="text-gray-400 mb-4" > All-electric SUV with impressive range and performance.</p >
+<div class="flex justify-between items-center" >
+<span class="text-green-500 font-bold" > $55, 000</span >
+<a href="#" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition-colors duration-300" > View Listing</a >
+</div >
+</div >
+</div >
+<div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg" >
+<img src="https://via.placeholder.com/300x200" alt="Car 2" class="w-full h-48 object-cover" >
+<div class="p-4" >
+<h3 class="text-xl font-bold mb-2" > 2023 Lucid Air Dream Edition</h3 >
+<p class="text-gray-400 mb-4" > Luxurious all-electric sedan with cutting-edge technology.</p >
+<div class="flex justify-between items-center" >
+<span class="text-green-500 font-bold" > $169, 000</span >
+<a href="#" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition-colors duration-300" > View Listing</a >
+</div >
+</div >
+</div >
+<div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg" >
+<img src="https://via.placeholder.com/300x200" alt="Car 3" class="w-full h-48 object-cover" >
+<div class="p-4" >
+<h3 class="text-xl font-bold mb-2" > 2024 Rivian R1T</h3 >
+<p class="text-gray-400 mb-4" > All-electric pickup truck with impressive off-road capabilities.</p >
+<div class="flex justify-between items-center" >
+<span class="text-green-500 font-bold" > $67, 500</span >
+<a href="#" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition-colors duration-300" > View Listing</a >
+</div >
+</div >
+</div >
+</div >
+</div >
+</section >
+
+<section class="car-rental py-16 bg-gray-800" >
+<div class="container mx-auto" >
+<h2 class="text-3xl font-bold mb-8" > Car Rental</h2 >
+<p class="mb-8" > Explore our selection of rental vehicles for your next adventure.</p >
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8" >
+<div class="bg-gray-700 rounded-lg overflow-hidden shadow-lg" >
+<img src="https://via.placeholder.com/300x200" alt="Rental Car 1" class="w-full h-48 object-cover" >
+<div class="p-4" >
+<h3 class="text-xl font-bold mb-2" > 2023 Nissan Leaf</h3 >
+<p class="text-gray-400 mb-4" > All-electric compact car with a range of 150 miles.</p >
+<div class="flex justify-between items-center" >
+<span class="text-green-500 font-bold" > $50/day</span >
+<a href="#" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition-colors duration-300" > Reserve Now</a >
+</div >
+</div >
+</div >
+<div class="bg-gray-700 rounded-lg overflow-hidden shadow-lg" >
+<img src="https://via.placeholder.com/300x200" alt="Rental Car 2" class="w-full h-48 object-cover" >
+<div class="p-4" >
+<h3 class="text-xl font-bold mb-2" > 2024 Ford Mustang Mach-E</h3 >
+<p class="text-gray-400 mb-4" > All-electric performance SUV with a range of 300 miles.</p >
+<div class="flex justify-between items-center" >
+<span class="text-green-500 font-bold" > $75/day</span >
+<a href="#" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition-colors duration-300" > Reserve Now</a >
+</div >
+</div >
+</div >
+<div class="bg-gray-700 rounded-lg overflow-hidden shadow-lg" >
+<img src="https://via.placeholder.com/300x200" alt="Rental Car 3" class="w-full h-48 object-cover" >
+<div class="p-4" >
+<h3 class="text-xl font-bold mb-2" > 2022 Hyundai Kona Electric</h3 >
+<p class="text-gray-400 mb-4" > All-electric compact SUV with a range of 258 miles.</p >
+<div class="flex justify-between items-center" >
+<span class="text-green-500 font-bold" > $60/day</span >
+<a href="#" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition-colors duration-300" > Reserve Now</a >
+</div >
+</div >
+</div >
+</div >
+</div >
+</section >
+
+<section class="spare-parts py-16" >
+<div class="container mx-auto" >
+<h2 class="text-3xl font-bold mb-8" > Spare Parts</h2 >
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" >
+<div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg" >
+<img src="https://via.placeholder.com/300x200" alt="Spare Part 1" class="w-full h-48 object-cover" >
+<div class="p-4" >
+<h3 class="text-xl font-bold mb-2" > Tesla Model 3 Battery Pack</h3 >
+<p class="text-gray-400 mb-4" > High-capacity battery pack for your Tesla Model 3.</p >
+<div class="flex justify-between items-center" >
+<span class="text-green-500 font-bold" > $7, 500</span >
+<a href="#" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition-colors duration-300" > Buy Now</a >
+</div >
+</div >
+</div >
+<div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg" >
+<img src="https://via.placeholder.com/300x200" alt="Spare Part 2" class="w-full h-48 object-cover" >
+<div class="p-4" >
+<h3 class="text-xl font-bold mb-2" > Rivian R1T Tire Set</h3 >
+<p class="text-gray-400 mb-4" > High-performance off-road tires for your Rivian R1T.</p >
+<div class="flex justify-between items-center" >
+<span class="text-green-500 font-bold" > $1, 200</span >
+<a href="#" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition-colors duration-300" > Buy Now</a >
+</div >
+</div >
+</div >
+<div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg" >
+<img src="https://via.placeholder.com/300x200" alt="Spare Part 3" class="w-full h-48 object-cover" >
+<div class="p-4" >
+<h3 class="text-xl font-bold mb-2" > Lucid Air Headlight</h3 >
+<p class="text-gray-400 mb-4" > High-intensity LED headlight for your Lucid Air.</p >
+<div class="flex justify-between items-center" >
+<span class="text-green-500 font-bold" > $800</span >
+<a href="#" class="bg-blue -600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full transition-colors duration-300" > Buy Now</a >
+</div >
+</div >
+</div >
+</div >
+</div >
+</section >
+
+<section class="car-photography py-16 bg-gray-800" >
+<div class="container mx-auto" >
+<h2 class="text-3xl font-bold mb-8" > Car Photography</h2 >
+<p class="mb-8" > Showcase your car in the best light with our professional photography services.</p >
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8" >
+<div >
+<img src="https://via.placeholder.com/400x300" alt="Car Photography" class="rounded-lg shadow-lg" >
+</div >
+<div >
+<h3 class="text-2xl font-bold mb-4" > Capture Your Car's Beauty</h3>
+<p class="mb-6" > Our team of skilled photographers will work with you to showcase your car in the best possible light. From vibrant outdoor shots to sleek studio sessions, we'll help you create stunning visuals that will captivate potential buyers.</p>
+<a href="#" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-full transition-colors duration-300" > Learn More</a >
+</div >
+</div >
+</div >
+</section >
+
+<section class="agency py-16" >
+<div class="
