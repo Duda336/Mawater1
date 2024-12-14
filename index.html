@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mawater 974 - Future of Mobility</title>
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.16/tailwind.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -13,14 +16,27 @@
             <a href="#" class="text-2xl font-bold">Mawater 974</a>
             <ul class="flex space-x-6">
                 <li><a href="#" class="hover:text-gray-400">Home</a></li>
-                <li><a href="#" class="hover:text-gray-400">Car Ads</a></li>
+                <li><a href="#" class="hover:text-gray-400">Buy A Car</a></li>
+                <li><a href="#" class="hover:text-gray-400">Sell A Car</a></li>
                 <li><a href="#" class="hover:text-gray-400">Car Rental</a></li>
                 <li><a href="#" class="hover:text-gray-400">Spare Parts</a></li>
                 <li><a href="#" class="hover:text-gray-400">Car Photography</a></li>
-                <li><a href="#" class="hover:text-gray-400">Agency</a></li>
-            </ul>
-        </nav>
-    </header>
+                <li><a href="#" class="hover:text-gray-400">Showrooms</a></li>
+              </ul>
+        <div class="flex items-center space-x-4">
+            <button id="loginBtn" class="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition">
+                Login
+            </button>
+            <button id="registerBtn" class="border border-blue-600 text-blue-600 px-4 py-2 rounded-full hover:bg-blue-50 transition">
+                Create Account
+            </button>
+            <!-- Settings Button -->
+            <button id="settingsBtn" class="text-blue-600 hover:text-blue-900 transition">
+                <i class="fas fa-cogs text-2xl"></i>
+            </button>
+        </div>
+    </nav>
+</header>
 
     <main>
         <section class="hero py-24 bg-gradient-to-r from-blue-900 to-purple-900">
@@ -206,14 +222,67 @@
                 </div>
             </div>
         </section>
-    </main>
 
-    <footer class="bg-gray-800 py-6 mt-16">
-        <div class="container mx-auto text-center">
-            <p class="text-gray-400">&copy; 2023 Mawater 974. All rights reserved.</p>
+    <!-- Contact Section -->
+    <section id="contact" class="bg-gray-800 text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h3 class="text-3xl font-bold mb-6">Contact Us</h3>
+            <p class="text-gray-400 mb-10 max-w-2xl mx-auto">We are here to help. Reach out to us via the form below or through our contact information</p>
+            <form class="max-w-lg mx-auto">
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <input type="text" placeholder="Name" class="w-full p-3 rounded-lg bg-gray-700 text-white">
+                    <input type="email" placeholder="Email" class="w-full p-3 rounded-lg bg-gray-700 text-white">
+                </div>
+                <textarea placeholder="Your Message" class="w-full p-3 rounded-lg bg-gray-700 text-white h-40 mb-6"></textarea>
+                <button class="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition">
+                    Send Message
+                </button>
+            </form>
         </div>
-    </footer>
+    </section>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-12">
+    <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-4 gap-8">
+            <div>
+                <h5 class="text-xl font-bold mb-4">Mawater 974</h5>
+                <p class="text-gray-400">"Ride In Style"</p>
+            </div>
+            <div>
+                <h5 class="text-xl font-bold mb-4">Quick Links</h5>
+                <ul>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Home</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Cars</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Services</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-xl font-bold mb-4">Contact</h5>
+                <p class="text-gray-400">+974 55555555</p>
+                <p class="text-gray-400">info@Mawater974.com</p>
+            </div>
+            <div>
+                <h5 class="text-xl font-bold mb-4">Follow Us</h5>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-snapchat"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- New Footer Content -->
+        <div class="text-center mt-8">
+            <p>&copy; 2024 Mawater 974 | All Rights Reserved</p>
+            <p>
+                <a href="privacy.html" class="text-gray-400 hover:text-white">Privacy Policy</a> |
+                <a href="terms.html" class="text-gray-400 hover:text-white">Terms of Service</a>
+            </p>
+        </div>
+    </div>
+</footer>
 
     <script src="script.js"></script>
-</body>
+</main>
 </html>
