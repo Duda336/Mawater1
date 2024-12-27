@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Ads - Mawater974</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-900 text-white min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-gray-800 shadow-lg" id="navbar"></nav>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-8">
+        <div class="flex justify-between items-center mb-6">
+            <h1 class="text-2xl font-bold">My Car Listings</h1>
+            <a href="sell-car.html" class="bg-blue-600 text-white px-6 py-2 rounded-full hover:bg-blue-700 transition">
+                <i class="fas fa-plus mr-2"></i>Post New Ad
+            </a>
+        </div>
+
+        <!-- Stats Overview -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+            <div class="bg-gray-800 rounded-lg p-6">
+                <h3 class="text-lg font-semibold mb-2">Active Listings</h3>
+                <p id="activeCount" class="text-3xl font-bold text-blue-500">0</p>
+            </div>
+            <div class="bg-gray-800 rounded-lg p-6">
+                <h3 class="text-lg font-semibold mb-2">Pending Approval</h3>
+                <p id="pendingCount" class="text-3xl font-bold text-yellow-500">0</p>
+            </div>
+            <div class="bg-gray-800 rounded-lg p-6">
+                <h3 class="text-lg font-semibold mb-2">Total Views</h3>
+                <p id="viewsCount" class="text-3xl font-bold text-green-500">0</p>
+            </div>
+            <div class="bg-gray-800 rounded-lg p-6">
+                <h3 class="text-lg font-semibold mb-2">Total Favorites</h3>
+                <p id="favoritesCount" class="text-3xl font-bold text-red-500">0</p>
+            </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="bg-gray-800 rounded-lg p-4 mb-8">
+            <div class="flex flex-wrap gap-4">
+                <select id="statusFilter" class="bg-gray-700 text-white rounded px-4 py-2">
+                    <option value="">All Status</option>
+                    <option value="approved">Active</option>
+                    <option value="pending">Pending</option>
+                    <option value="rejected">Rejected</option>
+                </select>
+                <select id="sortBy" class="bg-gray-700 text-white rounded px-4 py-2">
+                    <option value="created_at">Date Listed</option>
+                    <option value="price_high">Price: High to Low</option>
+                    <option value="price_low">Price: Low to High</option>
+                    <option value="favorites">Most Favorited</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Listings Grid -->
+        <div id="listingsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Loading placeholder -->
+            <div class="col-span-full text-center py-8">
+                <p class="text-gray-400">Loading your listings...</p>
+            </div>
+        </div>
+
+        <!-- Empty State -->
+        <div id="emptyState" class="hidden text-center py-16">
+            <i class="fas fa-car text-6xl text-gray-600 mb-4"></i>
+            <h2 class="text-xl font-semibold mb-2">No Listings Yet</h2>
+            <p class="text-gray-400 mb-6">Start selling your car by creating your first listing</p>
+            <a href="sell-car.html" class="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-700 transition">
+                Post Your First Ad
+            </a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8" id="footer"></footer>
+
+    <script>
+        // Load navbar and footer
+        fetch('navbar.html')
+            .then(response => response.text())
+            .then(html => document.getElementById('navbar').innerHTML = html);
+        
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(html => document.getElementById('footer').innerHTML = html);
+
+        // Check authentication
+        const user = JSON.parse(localStorage.getItem('user'));
+        if (!user) {
+            window.location.href = 'login.html';
+        }
+
+        // Load user's listings
+        async function loadListings() {
+            try {
+                const response = await fetch(`http://localhost:5000/api/my-cars?user_id=${user.id}`);
+                const listings = await response.json();
+
+                const grid = document.getElementById('listingsGrid');
+                const emptyState = document.getElementById('emptyState');
+
+                if (!response.ok) {
+                    grid.innerHTML = `
+                        <div class="col-span-full text-center py-8">
+                            <p class="text-red-500">Error: ${listings.error || 'Failed to load listings'}</p>
+                        </div>
+                    `;
+                    return;
+                }
+
+                if (listings.length === 0) {
+                    grid.classList.add('hidden');
+                    emptyState.classList.remove('hidden');
+                    return;
+                }
+
+                grid.classList.remove('hidden');
+                emptyState.classList.add('hidden');
+
+                // Update stats
+                const stats = listings.reduce((acc, car) => {
+                    if (car.status === 'approved') acc.active++;
+                    if (car.status === 'pending') acc.pending++;
+                    acc.favorites += car.favorite_count;
+                    return acc;
+                }, { active: 0, pending: 0, favorites: 0 });
+
+                document.getElementById('activeCount').textContent = stats.active;
+                document.getElementById('pendingCount').textContent = stats.pending;
+                document.getElementById('favoritesCount').textContent = stats.favorites;
+
+                // Filter listings based on status
+                const statusFilter = document.getElementById('statusFilter').value;
+                const filteredListings = statusFilter ? 
+                    listings.filter(car => car.status === statusFilter) : 
+                    listings;
+
+                // Sort listings
+                const sortBy = document.getElementById('sortBy').value;
+                filteredListings.sort((a, b) => {
+                    switch (sortBy) {
+                        case 'price_high':
+                            return b.price - a.price;
+                        case 'price_low':
+                            return a.price - b.price;
+                        case 'favorites':
+                            return b.favorite_count - a.favorite_count;
+                        default:
+                            return new Date(b.created_at) - new Date(a.created_at);
+                    }
+                });
+
+                grid.innerHTML = filteredListings.map(car => `
+                    <div class="bg-gray-800 rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                        <div class="relative h-48">
+                            <img src="${car.photos?.[0] || 'https://via.placeholder.com/400x300?text=No+Image'}" 
+                                 alt="${car.year} ${car.make} ${car.model}" 
+                                 class="w-full h-full object-cover">
+                            <div class="absolute top-4 right-4 flex space-x-2">
+                                <span class="px-3 py-1 rounded-full text-xs font-semibold ${
+                                    car.status === 'approved' ? 'bg-green-500' :
+                                    car.status === 'pending' ? 'bg-yellow-500' :
+                                    'bg-red-500'
+                                }">
+                                    ${car.status.charAt(0).toUpperCase() + car.status.slice(1)}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold mb-2">${car.year} ${car.make} ${car.model}</h3>
+                            <div class="flex justify-between items-center mb-4">
+                                <span class="text-2xl font-bold text-blue-500">€${Number(car.price).toLocaleString()}</span>
+                                <span class="text-gray-400">${Number(car.mileage).toLocaleString()} km</span>
+                            </div>
+                            <div class="space-y-2">
+                                <p class="text-gray-400">${car.description}</p>
+                                <div class="flex justify-between text-sm text-gray-400">
+                                    <span>Condition: ${car.condition}</span>
+                                    <span>${car.favorite_count} favorites</span>
+                                </div>
+                            </div>
+                            <div class="mt-6 flex justify-between items-center">
+                                <div class="flex space-x-2">
+                                    <button onclick="editListing(${car.id})" class="bg-gray-700 text-white px-4 py-2 rounded hover:bg-gray-600 transition">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button onclick="deleteListing(${car.id})" class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 transition">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                                <div class="flex items-center space-x-4">
+                                    <span class="text-sm text-gray-400">
+                                        <i class="far fa-eye mr-1"></i>0 views
+                                    </span>
+                                    <span class="text-sm text-gray-400">
+                                        <i class="far fa-heart mr-1"></i>${car.favorite_count}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('listingsGrid').innerHTML = `
+                    <div class="col-span-full text-center py-8">
+                        <p class="text-red-500">Error loading listings. Please try again later.</p>
+                    </div>
+                `;
+            }
+        }
+
+        // Edit listing
+        function editListing(carId) {
+            window.location.href = `edit-car.html?id=${carId}`;
+        }
+
+        // Delete listing
+        async function deleteListing(carId) {
+            if (!confirm('Are you sure you want to delete this listing?')) return;
+
+            try {
+                const response = await fetch(`http://localhost:5000/api/cars/${carId}`, {
+                    method: 'DELETE'
+                });
+
+                if (response.ok) {
+                    loadListings(); // Reload the listings
+                } else {
+                    const data = await response.json();
+                    alert(data.error || 'Failed to delete listing');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error deleting listing');
+            }
+        }
+
+        // Filter change handlers
+        document.getElementById('statusFilter').addEventListener('change', loadListings);
+        document.getElementById('sortBy').addEventListener('change', loadListings);
+
+        // Load listings when page loads
+        window.addEventListener('load', loadListings);
+    </script>
+</body>
+</html>

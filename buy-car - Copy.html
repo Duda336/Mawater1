@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy a Car - Mawater 974</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>Mawater 974</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="buy-car.html" class="active">Buy a Car</a></li>
+                <li><a href="#sell-car">Sell Your Car</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="car-listing-hero">
+        <div class="search-container">
+            <h2>Find Your Perfect Car</h2>
+            <div class="search-filters">
+                <input type="text" id="search-input" placeholder="Search cars...">
+                <select id="brand-filter">
+                    <option value="">All Brands</option>
+                    <option value="toyota">Toyota</option>
+                    <option value="bmw">BMW</option>
+                    <option value="mercedes">Mercedes</option>
+                    <option value="audi">Audi</option>
+                </select>
+                <select id="price-filter">
+                    <option value="">Price Range</option>
+                    <option value="0-50000">$0 - $50,000</option>
+                    <option value="50000-100000">$50,000 - $100,000</option>
+                    <option value="100000+">$100,000+</option>
+                </select>
+                <select id="year-filter">
+                    <option value="">Year</option>
+                    <option value="2024">2024</option>
+                    <option value="2023">2023</option>
+                    <option value="2022">2022</option>
+                    <option value="2021">2021</option>
+                </select>
+                <button id="search-button" class="cta-button">Search</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="cars-grid-section">
+        <div class="view-toggle">
+            <button class="view-button active" data-view="grid"><i class="fas fa-th"></i> Grid</button>
+            <button class="view-button" data-view="list"><i class="fas fa-list"></i> List</button>
+        </div>
+        <div class="car-grid" id="car-listings">
+            <!-- Car listings will be populated by JavaScript -->
+        </div>
+        <div class="pagination">
+            <button id="prev-page"><i class="fas fa-chevron-left"></i></button>
+            <span id="page-info">Page 1 of 1</span>
+            <button id="next-page"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+    <section id="sell-car" class="sell-car-section">
+        <h2>Sell Your Car</h2>
+        <p>List your car with us and reach thousands of potential buyers</p>
+        <form id="sell-car-form" class="sell-car-form">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label>Brand</label>
+                    <input type="text" required placeholder="e.g., Toyota">
+                </div>
+                <div class="form-group">
+                    <label>Model</label>
+                    <input type="text" required placeholder="e.g., Camry">
+                </div>
+                <div class="form-group">
+                    <label>Year</label>
+                    <input type="number" required min="1900" max="2024">
+                </div>
+                <div class="form-group">
+                    <label>Mileage</label>
+                    <input type="number" required placeholder="e.g., 50000">
+                </div>
+                <div class="form-group">
+                    <label>Price (QAR)</label>
+                    <input type="number" required placeholder="Enter your asking price">
+                </div>
+                <div class="form-group">
+                    <label>Contact Number</label>
+                    <input type="tel" required placeholder="+974 XXXX XXXX">
+                </div>
+            </div>
+            <div class="form-group full-width">
+                <label>Description</label>
+                <textarea required placeholder="Describe your car's condition, features, etc."></textarea>
+            </div>
+            <div class="form-group full-width">
+                <label>Upload Images</label>
+                <input type="file" multiple accept="image/*">
+            </div>
+            <button type="submit" class="cta-button">List Your Car</button>
+        </form>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Mawater 974</h3>
+                <p>Your trusted partner in finding the perfect vehicle.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="buy-car.html">Buy a Car</a></li>
+                    <li><a href="#sell-car">Sell Your Car</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Mawater 974. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

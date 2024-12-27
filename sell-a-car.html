@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mawater 974 - Future of Mobility</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.16/tailwind.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-900 text-white">
+    <header class="bg-gray-800 py-4 shadow-lg">
+    <nav class="container mx-auto flex justify-between items-center">
+        <a href="#" class="flex items-center space-x-3">
+            <!-- Logo Image -->
+            <img src="logo.png" alt="Logo" class="w-12 h-12">
+            <!-- Website Name -->
+            <span class="text-2xl font-bold">Mawater 974</span>
+        </a>
+        <ul class="flex space-x-6">
+                <li><a href="index.html" class="hover:text-gray-400">Home</a></li>
+                <li><a href="buy-a-car.htm" class="hover:text-gray-400">Buy A Car</a></li>
+                <li><a href="sell-a-car.html" class="hover:text-gray-400">Sell A Car</a></li>
+                <li><a href="rent-a-car.htm" class="hover:text-gray-400">Rent A Car</a></li>
+                <li><a href="#" class="hover:text-gray-400">Spare Parts</a></li>
+                <li><a href="#" class="hover:text-gray-400">Car Photography</a></li>
+                <li><a href="#" class="hover:text-gray-400">Showrooms</a></li>
+        </ul>
+        <div class="flex items-center space-x-4">
+            <button id="loginBtn" class="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition" onclick="window.location.href='login-page.htm'">
+    Login
+</button>
+
+            <button id="registerBtn" class="border border-blue-600 text-blue-600 px-4 py-2 rounded-full hover:bg-blue-50 transition" onclick="window.location.href='signup.html'">
+                Create Account
+            </button>
+            <!-- Settings Button -->
+            <button id="settingsBtn" class="text-blue-600 hover:text-blue-900 transition">
+                <i class="fas fa-cogs text-2xl"></i>
+            </button>
+        </div>
+    </nav>
+</header>
+    
+    <main>
+        <section class="py-16 bg-gradient-to-r from-blue-900 to-purple-900">
+            <div class="container mx-auto text-center">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">Sell Your Car</h1>
+                <p class="text-lg md:text-xl mb-8">List your car and reach thousands of potential buyers in Mauritius.</p>
+            </div>
+        </section>
+
+        <!-- Car Listing Form Section -->
+        <section class="filter-section py-16 bg-gray-900">
+            <div class="container mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-gray-700 p-8 rounded-lg shadow-lg">
+                        <h4 class="text-xl font-bold mb-4">Car Details</h4>
+                        <form id="sellCarForm" class="space-y-4">
+                            <div>
+                                <label class="block text-gray-400">Make</label>
+                                <select id="make" name="make" required class="w-full mt-2 p-2 rounded bg-gray-600">
+                                    <option value="">Select Make</option>
+                                    <option value="tesla">Tesla</option>
+                                    <option value="audi">Audi</option>
+                                    <option value="mercedes">Mercedes-Benz</option>
+                                    <option value="bmw">BMW</option>
+                                    <option value="toyota">Toyota</option>
+                                    <option value="honda">Honda</option>
+                                    <option value="nissan">Nissan</option>
+                                    <option value="mazda">Mazda</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-gray-400">Model</label>
+                                <input type="text" id="model" name="model" required class="w-full mt-2 p-2 rounded bg-gray-600" placeholder="Enter model">
+                            </div>
+                            <div>
+                                <label class="block text-gray-400">Year</label>
+                                <input type="number" id="year" name="year" required min="1900" max="2024" class="w-full mt-2 p-2 rounded bg-gray-600" placeholder="Enter year">
+                            </div>
+                            <div>
+                                <label class="block text-gray-400">Price ($)</label>
+                                <input type="number" id="price" name="price" required min="0" class="w-full mt-2 p-2 rounded bg-gray-600" placeholder="Enter price">
+                            </div>
+                            <div>
+                                <label class="block text-gray-400">Mileage (miles)</label>
+                                <input type="number" id="mileage" name="mileage" required min="0" class="w-full mt-2 p-2 rounded bg-gray-600" placeholder="Enter mileage">
+                            </div>
+                            <div>
+                                <label class="block text-gray-400">Condition</label>
+                                <select id="condition" name="condition" required class="w-full mt-2 p-2 rounded bg-gray-600">
+                                    <option value="">Select Condition</option>
+                                    <option value="new">New</option>
+                                    <option value="like_new">Like New</option>
+                                    <option value="excellent">Excellent</option>
+                                    <option value="good">Good</option>
+                                    <option value="fair">Fair</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-gray-400">Gearbox Type</label>
+                                <select id="gearbox" name="gearbox" required class="w-full mt-2 p-2 rounded bg-gray-600">
+                                    <option value="">Select Gearbox</option>
+                                    <option value="manual">Manual</option>
+                                    <option value="automatic">Automatic</option>
+                                    <option value="semi_automatic">Semi-Automatic</option>
+                                    <option value="cvt">CVT</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-gray-400">Description</label>
+                                <textarea id="description" name="description" required rows="4" class="w-full mt-2 p-2 rounded bg-gray-600" placeholder="Describe your car..."></textarea>
+                            </div>
+                            <div>
+                                <label class="block text-gray-400">Photos</label>
+                                <div class="mt-2 flex items-center justify-center w-full">
+                                    <label class="flex flex-col items-center justify-center w-full h-32 border-2 border-gray-600 border-dashed rounded-lg cursor-pointer bg-gray-700 hover:bg-gray-600">
+                                        <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                                            <i class="fas fa-cloud-upload-alt text-3xl text-gray-400 mb-2"></i>
+                                            <p class="text-sm text-gray-400">Click to upload photos</p>
+                                        </div>
+                                        <input id="photos" name="photos" type="file" class="hidden" multiple accept="image/*" required>
+                                    </label>
+                                </div>
+                                <div id="imagePreview" class="grid grid-cols-2 gap-2 mt-2"></div>
+                            </div>
+                            <button type="submit" class="w-full bg-blue-600 text-white font-bold py-2 px-4 rounded-full hover:bg-blue-700 transition-colors duration-300">
+                                List Your Car
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <!-- Preview Section -->
+                    <div class="md:col-span-2">
+                        <h3 class="text-xl font-bold mb-6">Preview Your Listing</h3>
+                        <div id="previewSection" class="bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+                            <div id="previewImages" class="w-full h-64 bg-gray-700 flex items-center justify-center">
+                                <i class="fas fa-images text-4xl text-gray-500"></i>
+                            </div>
+                            <div class="p-6">
+                                <h3 id="previewTitle" class="text-2xl font-bold mb-2">Your Car Title Will Appear Here</h3>
+                                <p id="previewDescription" class="text-gray-400 mb-4">Your car description will appear here...</p>
+                                <div class="grid grid-cols-2 gap-4 mb-4">
+                                    <div>
+                                        <span class="text-gray-400">Price:</span>
+                                        <span id="previewPrice" class="text-green-500 font-bold ml-2">$0</span>
+                                    </div>
+                                    <div>
+                                        <span class="text-gray-400">Year:</span>
+                                        <span id="previewYear" class="ml-2">-</span>
+                                    </div>
+                                    <div>
+                                        <span class="text-gray-400">Mileage:</span>
+                                        <span id="previewMileage" class="ml-2">-</span>
+                                    </div>
+                                    <div>
+                                        <span class="text-gray-400">Condition:</span>
+                                        <span id="previewCondition" class="ml-2">-</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="bg-gray-800 text-white py-16">
+            <div class="container mx-auto px-4 text-center">
+                <h3 class="text-3xl font-bold mb-6">Contact Us</h3>
+                <p class="text-gray-400 mb-10 max-w-2xl mx-auto">We are here to help. Reach out to us via the form below or through our contact information</p>
+                <form class="max-w-lg mx-auto">
+                    <div class="grid md:grid-cols-2 gap-6 mb-6">
+                        <input type="text" placeholder="Name" class="w-full p-3 rounded-lg bg-gray-700 text-white">
+                        <input type="email" placeholder="Email" class="w-full p-3 rounded-lg bg-gray-700 text-white">
+                    </div>
+                    <textarea placeholder="Your Message" class="w-full p-3 rounded-lg bg-gray-700 text-white h-40 mb-6"></textarea>
+                    <button class="bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-900 text-white py-12">
+            <div class="container mx-auto px-4">
+                <div class="grid md:grid-cols-4 gap-8">
+                    <div>
+                        <h5 class="text-xl font-bold mb-4">Mawater 974</h5>
+                        <p class="text-gray-400">"Ride In Style"</p>
+                    </div>
+                    <div>
+                        <h5 class="text-xl font-bold mb-4">Quick Links</h5>
+                        <ul>
+                            <li><a href="#" class="text-gray-400 hover:text-white">Home</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white">Cars</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white">Services</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h5 class="text-xl font-bold mb-4">Contact</h5>
+                        <p class="text-gray-400">+974 55555555</p>
+                        <p class="text-gray-400">info@Mawater974.com</p>
+                    </div>
+                    <div>
+                        <h5 class="text-xl font-bold mb-4">Follow Us</h5>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-snapchat"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-8">
+                    <p>&copy; 2024 Mawater 974 | All Rights Reserved</p>
+                    <p>
+                        <a href="privacy.html" class="text-gray-400 hover:text-white">Privacy Policy</a> |
+                        <a href="terms.html" class="text-gray-400 hover:text-white">Terms of Service</a>
+                    </p>
+                </div>
+            </div>
+        </footer>
+
+        <script src="js/auth.js"></script>
+        <script>
+            // Form preview functionality
+            const form = document.getElementById('sellCarForm');
+            const previewTitle = document.getElementById('previewTitle');
+            const previewDescription = document.getElementById('previewDescription');
+            const previewPrice = document.getElementById('previewPrice');
+            const previewYear = document.getElementById('previewYear');
+            const previewMileage = document.getElementById('previewMileage');
+            const previewCondition = document.getElementById('previewCondition');
+            const previewImages = document.getElementById('previewImages');
+            const imagePreview = document.getElementById('imagePreview');
+
+            // Update preview as user types
+            form.addEventListener('input', function(e) {
+                const make = document.getElementById('make').value;
+                const model = document.getElementById('model').value;
+                const year = document.getElementById('year').value;
+                const price = document.getElementById('price').value;
+                const mileage = document.getElementById('mileage').value;
+                const condition = document.getElementById('condition').value;
+                const description = document.getElementById('description').value;
+
+                previewTitle.textContent = make && model ? `${year} ${make} ${model}` : 'Your Car Title Will Appear Here';
+                previewDescription.textContent = description || 'Your car description will appear here...';
+                previewPrice.textContent = price ? `$${Number(price).toLocaleString()}` : '$0';
+                previewYear.textContent = year || '-';
+                previewMileage.textContent = mileage ? `${Number(mileage).toLocaleString()} miles` : '-';
+                previewCondition.textContent = condition ? condition.replace('_', ' ').charAt(0).toUpperCase() + condition.slice(1) : '-';
+            });
+
+            // Handle image preview
+            document.getElementById('photos').addEventListener('change', function(e) {
+                imagePreview.innerHTML = '';
+                previewImages.innerHTML = '';
+                
+                [...e.target.files].forEach((file, index) => {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        // Thumbnail preview
+                        const thumb = document.createElement('div');
+                        thumb.className = 'relative';
+                        thumb.innerHTML = `
+                            <img src="${e.target.result}" class="w-full h-24 object-cover rounded">
+                        `;
+                        imagePreview.appendChild(thumb);
+
+                        // Main preview (show only first image)
+                        if (index === 0) {
+                            previewImages.innerHTML = `
+                                <img src="${e.target.result}" class="w-full h-64 object-cover">
+                            `;
+                        }
+                    }
+                    reader.readAsDataURL(file);
+                });
+            });
+
+            // Handle form submission
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+                
+                const user = JSON.parse(localStorage.getItem('user'));
+                if (!user) {
+                    alert('Please login to list your car');
+                    window.location.href = 'login-page.htm';
+                    return;
+                }
+
+                // Get form values
+                const formData = {
+                    user_id: user.id,
+                    make: document.getElementById('make').value,
+                    model: document.getElementById('model').value,
+                    year: parseInt(document.getElementById('year').value),
+                    price: parseFloat(document.getElementById('price').value),
+                    mileage: parseInt(document.getElementById('mileage').value),
+                    condition: document.getElementById('condition').value,
+                    description: document.getElementById('description').value
+                };
+
+                try {
+                    const response = await fetch('http://localhost:5000/api/cars', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(formData)
+                    });
+
+                    const data = await response.json();
+
+                    if (response.ok) {
+                        alert('Car listed successfully! Waiting for admin approval.');
+                        window.location.href = 'my-ads.html';
+                    } else {
+                        alert(data.error || 'Error listing car');
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                    alert('Error listing car');
+                }
+            });
+        </script>
+    </body>
+</html>

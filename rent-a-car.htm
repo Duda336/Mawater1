@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent A Car - Mawater 974</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-900 text-white">
+    <header class="bg-gray-800 py-4 shadow-lg">
+        <nav class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-3">
+                <img src="logo.png" alt="Logo" class="w-12 h-12">
+                <span class="text-2xl font-bold">Mawater 974</span>
+            </a>
+            <ul class="flex space-x-6">
+                <li><a href="index.html" class="hover:text-gray-400">Home</a></li>
+                <li><a href="buy-a-car.htm" class="hover:text-gray-400">Buy A Car</a></li>
+                <li><a href="#" class="hover:text-gray-400">Sell A Car</a></li>
+                <li><a href="rent-a-car.htm" class="hover:text-gray-400 text-blue-500">Rent A Car</a></li>
+                <li><a href="#" class="hover:text-gray-400">Spare Parts</a></li>
+                <li><a href="#" class="hover:text-gray-400">Car Photography</a></li>
+                <li><a href="#" class="hover:text-gray-400">Showrooms</a></li>
+            </ul>
+            <div class="flex items-center space-x-4">
+                <button class="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition">
+                    Login
+                </button>
+                <button class="border border-blue-600 text-blue-600 px-4 py-2 rounded-full hover:bg-blue-50 transition">
+                    Create Account
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="py-16 bg-gray-800">
+            <div class="container mx-auto px-4">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h1 class="text-4xl font-bold mb-6">Rent Your Dream Car Today</h1>
+                    <p class="text-xl text-gray-400 mb-8">Choose from our wide selection of luxury and economy cars for your perfect journey</p>
+                    <div class="bg-gray-700 rounded-lg p-6">
+                        <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                            <input type="text" placeholder="Pick-up Location" class="w-full p-3 rounded-lg bg-gray-600 text-white">
+                            <input type="date" class="w-full p-3 rounded-lg bg-gray-600 text-white">
+                            <input type="date" class="w-full p-3 rounded-lg bg-gray-600 text-white">
+                            <button class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition">
+                                Search Cars
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Car Categories -->
+        <section class="py-12">
+            <div class="container mx-auto px-4">
+                <h2 class="text-2xl font-bold mb-8">Browse by Category</h2>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                    <div class="bg-gray-800 rounded-lg p-6 text-center hover:bg-gray-700 transition cursor-pointer">
+                        <i class="fas fa-car text-4xl text-blue-500 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Economy</h3>
+                        <p class="text-gray-400">Starting from $50/day</p>
+                    </div>
+                    <div class="bg-gray-800 rounded-lg p-6 text-center hover:bg-gray-700 transition cursor-pointer">
+                        <i class="fas fa-car-side text-4xl text-blue-500 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Luxury</h3>
+                        <p class="text-gray-400">Starting from $150/day</p>
+                    </div>
+                    <div class="bg-gray-800 rounded-lg p-6 text-center hover:bg-gray-700 transition cursor-pointer">
+                        <i class="fas fa-truck text-4xl text-blue-500 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">SUV</h3>
+                        <p class="text-gray-400">Starting from $100/day</p>
+                    </div>
+                    <div class="bg-gray-800 rounded-lg p-6 text-center hover:bg-gray-700 transition cursor-pointer">
+                        <i class="fas fa-car-battery text-4xl text-blue-500 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Electric</h3>
+                        <p class="text-gray-400">Starting from $80/day</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Available Cars -->
+        <section class="py-12">
+            <div class="container mx-auto px-4">
+                <div class="flex justify-between items-center mb-8">
+                    <h2 class="text-2xl font-bold">Available Cars</h2>
+                    <select class="p-2 rounded bg-gray-800">
+                        <option>Sort by: Featured</option>
+                        <option>Price: Low to High</option>
+                        <option>Price: High to Low</option>
+                        <option>Most Popular</option>
+                    </select>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Car Cards -->
+                    <div class="bg-gray-800 rounded-lg overflow-hidden">
+                        <img src="https://via.placeholder.com/300x200" alt="Car" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <div class="flex justify-between items-center mb-2">
+                                <h3 class="text-xl font-bold">BMW 3 Series</h3>
+                                <span class="text-green-500 font-bold">$80/day</span>
+                            </div>
+                            <div class="flex space-x-4 text-gray-400 mb-4">
+                                <span><i class="fas fa-user mr-2"></i>5 Seats</span>
+                                <span><i class="fas fa-cog mr-2"></i>Automatic</span>
+                                <span><i class="fas fa-gas-pump mr-2"></i>Petrol</span>
+                            </div>
+                            <button class="w-full bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition">
+                                Book Now
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Add more car cards as needed -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section class="py-12 bg-gray-800">
+            <div class="container mx-auto px-4">
+                <h2 class="text-2xl font-bold mb-8 text-center">Why Choose Mawater 974</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="text-center">
+                        <i class="fas fa-shield-alt text-4xl text-blue-500 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Fully Insured</h3>
+                        <p class="text-gray-400">All our vehicles come with comprehensive insurance coverage</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="fas fa-clock text-4xl text-blue-500 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">24/7 Support</h3>
+                        <p class="text-gray-400">Round-the-clock customer support for your peace of mind</p>
+                    </div>
+                    <div class="text-center">
+                        <i class="fas fa-car-crash text-4xl text-blue-500 mb-4"></i>
+                        <h3 class="text-xl font-bold mb-2">Roadside Assistance</h3>
+                        <p class="text-gray-400">Free roadside assistance included with every rental</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="py-12">
+            <div class="container mx-auto px-4">
+                <h2 class="text-2xl font-bold mb-8">Frequently Asked Questions</h2>
+                <div class="space-y-4 max-w-3xl mx-auto">
+                    <div class="bg-gray-800 rounded-lg p-4">
+                        <h3 class="text-lg font-bold mb-2">What documents do I need to rent a car?</h3>
+                        <p class="text-gray-400">You'll need a valid driver's license, passport or ID, and a credit card for the security deposit.</p>
+                    </div>
+                    <div class="bg-gray-800 rounded-lg p-4">
+                        <h3 class="text-lg font-bold mb-2">Is insurance included in the rental price?</h3>
+                        <p class="text-gray-400">Yes, basic insurance is included. Additional coverage options are available.</p>
+                    </div>
+                    <div class="bg-gray-800 rounded-lg p-4">
+                        <h3 class="text-lg font-bold mb-2">Can I modify or cancel my reservation?</h3>
+                        <p class="text-gray-400">Yes, you can modify or cancel your reservation up to 24 hours before pickup.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h5 class="text-xl font-bold mb-4">Mawater 974</h5>
+                    <p class="text-gray-400">"Ride In Style"</p>
+                </div>
+                <div>
+                    <h5 class="text-xl font-bold mb-4">Quick Links</h5>
+                    <ul>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Cars</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Services</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-xl font-bold mb-4">Contact</h5>
+                    <p class="text-gray-400">+974 55555555</p>
+                    <p class="text-gray-400">info@Mawater974.com</p>
+                </div>
+                <div>
+                    <h5 class="text-xl font-bold mb-4">Follow Us</h5>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-snapchat"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <p>&copy; 2024 Mawater 974 | All Rights Reserved</p>
+                <p>
+                    <a href="privacy.html" class="text-gray-400 hover:text-white">Privacy Policy</a> |
+                    <a href="terms.html" class="text-gray-400 hover:text-white">Terms of Service</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

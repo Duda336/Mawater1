@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account - Mawater 974</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-900 text-white">
+    <header class="bg-gray-800 py-4 shadow-lg">
+        <nav class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center space-x-3">
+                <img src="logo.png" alt="Logo" class="w-12 h-12">
+                <span class="text-2xl font-bold">Mawater 974</span>
+            </a>
+            <ul class="flex space-x-6">
+                <li><a href="index.html" class="hover:text-gray-400">Home</a></li>
+                <li><a href="buy-a-car.htm" class="hover:text-gray-400">Buy A Car</a></li>
+                <li><a href="sell-a-car.html" class="hover:text-gray-400">Sell A Car</a></li>
+                <li><a href="rent-a-car.htm" class="hover:text-gray-400">Rent A Car</a></li>
+                <li><a href="#" class="hover:text-gray-400">Spare Parts</a></li>
+                <li><a href="#" class="hover:text-gray-400">Car Photography</a></li>
+                <li><a href="#" class="hover:text-gray-400">Showrooms</a></li>
+            </ul>
+            <div class="flex items-center space-x-4">
+                <button id="loginBtn" class="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition" onclick="window.location.href='login-page.htm'">
+                    Login
+                </button>
+                <button id="registerBtn" class="border border-blue-600 text-blue-600 px-4 py-2 rounded-full hover:bg-blue-50 transition" onclick="window.location.href='signup.html'">
+                    Create Account
+                </button>
+                <button id="settingsBtn" class="text-blue-600 hover:text-blue-900 transition">
+                    <i class="fas fa-cogs text-2xl"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Sign Up Section -->
+    <main class="min-h-screen flex items-center justify-center py-16 px-4">
+        <div class="max-w-md w-full bg-gray-800 p-8 rounded-lg shadow-lg">
+            <h2 class="text-3xl font-bold text-center mb-8">Create Your Account</h2>
+            <form id="signupForm" action="#" method="POST" class="space-y-6">
+                <div class="grid grid-cols-2 gap-4">
+                    <div>
+                        <label for="firstName" class="block text-sm font-medium mb-2">First Name</label>
+                        <input type="text" id="firstName" name="firstName" required 
+                               class="w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition">
+                    </div>
+                    <div>
+                        <label for="lastName" class="block text-sm font-medium mb-2">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" required 
+                               class="w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition">
+                    </div>
+                </div>
+                <div>
+                    <label for="email" class="block text-sm font-medium mb-2">Email Address</label>
+                    <input type="email" id="email" name="email" required 
+                           class="w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition">
+                </div>
+                <div>
+                    <label for="password" class="block text-sm font-medium mb-2">Password</label>
+                    <input type="password" id="password" name="password" required 
+                           class="w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition">
+                </div>
+                <div>
+                    <label for="confirmPassword" class="block text-sm font-medium mb-2">Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required 
+                           class="w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition">
+                </div>
+                <div class="flex items-center">
+                    <input type="checkbox" id="terms" required class="rounded bg-gray-700 border-gray-600 text-blue-600 focus:ring-blue-500">
+                    <label for="terms" class="ml-2 text-sm">I agree to the <a href="terms.html" class="text-blue-500 hover:text-blue-400">Terms of Service</a> and <a href="privacy.html" class="text-blue-500 hover:text-blue-400">Privacy Policy</a></label>
+                </div>
+                <button type="submit" 
+                        class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition duration-300 transform hover:scale-105">
+                    Create Account
+                </button>
+                <div class="relative my-6">
+                    <div class="absolute inset-0 flex items-center">
+                        <div class="w-full border-t border-gray-600"></div>
+                    </div>
+                    <div class="relative flex justify-center text-sm">
+                        <span class="px-2 bg-gray-800 text-gray-400">Or sign up with</span>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <button type="button" 
+                            class="flex items-center justify-center bg-red-600 text-white py-3 rounded-lg hover:bg-red-700 transition duration-300">
+                        <i class="fab fa-google mr-2"></i> Google
+                    </button>
+                    <button type="button" 
+                            class="flex items-center justify-center bg-gray-700 text-white py-3 rounded-lg hover:bg-gray-600 transition duration-300">
+                        <i class="fab fa-apple mr-2"></i> Apple
+                    </button>
+                </div>
+            </form>
+            <p class="text-sm text-center mt-6">
+                Already have an account? 
+                <a href="login-page.htm" class="text-blue-500 hover:text-blue-400 font-medium">Sign in</a>
+            </p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h5 class="text-xl font-bold mb-4">Mawater 974</h5>
+                    <p class="text-gray-400">"Ride In Style"</p>
+                </div>
+                <div>
+                    <h5 class="text-xl font-bold mb-4">Quick Links</h5>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white">Home</a></li>
+                        <li><a href="buy-a-car.htm" class="text-gray-400 hover:text-white">Cars</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Services</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-xl font-bold mb-4">Contact</h5>
+                    <p class="text-gray-400">+974 55555555</p>
+                    <p class="text-gray-400">info@Mawater974.com</p>
+                </div>
+                <div>
+                    <h5 class="text-xl font-bold mb-4">Follow Us</h5>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-snapchat"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-8">
+                <p>&copy; 2024 Mawater 974 | All Rights Reserved</p>
+                <p>
+                    <a href="privacy.html" class="text-gray-400 hover:text-white">Privacy Policy</a> |
+                    <a href="terms.html" class="text-gray-400 hover:text-white">Terms of Service</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/auth.js"></script>
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const formData = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                email: document.getElementById('email').value,
+                password: document.getElementById('password').value
+            };
+
+            try {
+                const response = await fetch('http://localhost:5000/api/signup', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    localStorage.setItem('user', JSON.stringify(data));
+                    window.location.href = 'index.html';
+                } else {
+                    alert(data.error || 'Registration failed');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Error registering user');
+            }
+        });
+    </script>
+</body>
+</html>
